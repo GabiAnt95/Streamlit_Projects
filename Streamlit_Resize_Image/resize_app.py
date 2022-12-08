@@ -28,9 +28,9 @@ print(image)
 if image != None and x > 0 and y > 0:
     result = resize_image(image, x, y)
     result.save('Resized_' + str(x) + 'x' + str(y) + '.png')
-    st.image(result)
     with open('Resized_' + str(x) + 'x' + str(y) + '.png', "rb") as file:
         st.download_button("Download Image: ", file, file_name = 'Resized_' + str(x) + 'x' + str(y) + '.png', mime="image/png")
+        st.image(result)
         file.close()
         remove('Resized_' + str(x) + 'x' + str(y) + '.png')
 elif image == None:
